@@ -1,0 +1,26 @@
+CREATE TABLE TB_SSH (
+    id  TEXT NOT NULL PRIMARY KEY,
+    name TEXT NOT NULL,
+    address TEXT NOT NULL,
+    port INTEGER,
+    user_name TEXT NOT NULL,
+    pw TEXT,
+    status INTEGER NOT NULL
+);
+
+insertSSH:
+INSERT INTO TB_SSH(id, name, address, port, user_name, pw, status)
+VALUES(?, ?, ?, ?, ?, ?, ?);
+
+selectSSHById:
+SELECT * FROM TB_SSH WHERE id = ? AND status == 1;
+
+selectAllSSH:
+SELECT * FROM TB_SSH WHERE status == 1;
+
+deleteSSH:
+UPDATE TB_SSH SET status = 0 WHERE id == ?;
+
+updateSSH:
+UPDATE TB_SSH SET id = ?, name = ?, address = ?, port = ?, user_name = ?, pw = ?, status = ?
+WHERE id = ?;
