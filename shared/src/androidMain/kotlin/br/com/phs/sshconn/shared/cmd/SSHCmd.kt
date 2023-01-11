@@ -9,9 +9,9 @@ import java.io.IOException
 import java.util.*
 import java.util.concurrent.TimeUnit
 
-class SSHCmd {
+actual class SSHCmd {
 
-    fun sshCommand(attr: ArrayList<String>, command: String, callBack: (value: String) -> Unit, finish: () -> Unit) {
+    actual fun sshCommand(attr: ArrayList<String>, command: String, callBack: (value: String) -> Unit, finish: () -> Unit) {
 
         // Creating a client instance
         val client = SshClient.setUpDefaultClient()
@@ -74,5 +74,4 @@ class SSHCmd {
         }.start()
 
     }
-
 }

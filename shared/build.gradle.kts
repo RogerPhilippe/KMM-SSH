@@ -29,6 +29,7 @@ kotlin {
                 implementation("com.squareup.sqldelight:runtime:$sqlDelightVersion")
 
                 implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
+
             }
         }
         val commonTest by getting {
@@ -38,6 +39,7 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
+
                 // Adding implementations required for apache mina library
                 implementation("org.apache.mina:mina-core:3.0.0-M2")
                 implementation("org.apache.sshd:sshd-core:2.1.0")
@@ -47,6 +49,7 @@ kotlin {
                 implementation("org.slf4j:slf4j-simple:1.6.4")
 
                 implementation("com.squareup.sqldelight:android-driver:$sqlDelightVersion")
+
             }
         }
         val androidTest by getting
